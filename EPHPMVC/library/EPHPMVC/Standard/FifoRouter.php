@@ -1,6 +1,6 @@
 <?php
 
-use EPHPMVC\Standard;
+namespace EPHPMVC\Standard;
 
 use EPHPMVC\RouterInterface,
     EPHPMVC\RouteInterface,
@@ -15,7 +15,7 @@ class FifoRouter implements RouterInterface
     {
         $this->_routes[] = $route;
         
-        $return $this;
+        return $this;
     }
     
     public function route(RequestInterface $request, ResponseInterface $response)

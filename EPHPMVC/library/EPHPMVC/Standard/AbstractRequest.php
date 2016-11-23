@@ -4,7 +4,7 @@ namespace EPHPMVC\Standard;
 
 use EPHPMVC\RequestInterface;
 
-abstract AbstractRequest implements RequestInterface
+abstract class AbstractRequest implements RequestInterface
 {
     protected $_params = array();
     

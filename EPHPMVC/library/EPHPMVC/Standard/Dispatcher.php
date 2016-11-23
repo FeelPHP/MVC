@@ -2,11 +2,11 @@
 
 namespace EPHPMVC\Standard;
 
-use EMPHPMVC\RouterInterface,
-    EMPHPMVC\RequestInterface,
-    EMPHPMVC\ResponseInterface,
-    EMPHPMVC\ViewInterface,
-    EMPHPMVC\DispatcherInterface,
+use EPHPMVC\RouteInterface,
+    EPHPMVC\RequestInterface,
+    EPHPMVC\ResponseInterface,
+    EPHPMVC\ViewInterface,
+    EPHPMVC\DispatcherInterface;
 
 class Dispatcher implements DispatcherInterface
 {

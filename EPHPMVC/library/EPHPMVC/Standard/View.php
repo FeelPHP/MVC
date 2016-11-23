@@ -32,7 +32,7 @@ class View implements ViewInterface
             array_walk($nameOrValue, array($this, 'pass'));
         }
         
-        $this->_values[$nameOrVlue] = $value;
+        $this->_values[$nameOrValue] = $value;
         return $this;
     }
     

@@ -14,7 +14,7 @@ class FrontController
     
     protected $_dispatcher;
     
-    public function __construct(RouterInterface $router, DispatcherInterface $dipatcher)
+    public function __construct(RouterInterface $router, DispatcherInterface $dispatcher)
     {
         $this->_router = $router;
         $this->_dispatcher = $dispatcher;
