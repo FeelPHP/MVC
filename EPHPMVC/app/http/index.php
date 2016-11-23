@@ -50,3 +50,4 @@ $view->pass('e', function($str) {
 
 $frontController = new StandardFrontController($router, $dispatcher);
 $frontController->run($request, $response, $view);
+

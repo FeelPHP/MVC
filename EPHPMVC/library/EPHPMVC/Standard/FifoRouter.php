@@ -14,14 +14,12 @@ class FifoRouter implements RouterInterface
     public function addRoute(RouteInterface $route)
     {
         $this->_routes[] = $route;
-        
         return $this;
     }
     
     public function route(RequestInterface $request, ResponseInterface $response)
     {
         $matchingRoute = null;
-        
         foreach ($this->_routes as $route) {
             
             if ($route->matches($request)) {
