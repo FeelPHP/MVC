@@ -17,15 +17,10 @@ use EPHPMVC\Standard\FrontController as StandardFrontController,
     EPHPMVC\HTTP\Request as HTTPRequest,
     EPHPMVC\HTTP\Response as HTTPResponse;
 
-//foreach (get_declared_classes() as $declaredClass) {
-    //print_r($declaredClass);
-    //echo "<br>";
-//}
-
 $router = new StandardFifoRouter();
 
 $router->addRoute(new HTTPStaticPathRoute('/MVC/EPHPMVC/app/http/hello-world', 'HelloWorld'));
-$router->addRoute(new HTTPStaticPathRoute('/start', 'StartGreeting'));
+$router->addRoute(new HTTPStaticPathRoute('/MVC/EPHPMVC/app/http/iching/divine', 'IChing'));
 
 $dispatcher = new StandardDispatcher();
 
