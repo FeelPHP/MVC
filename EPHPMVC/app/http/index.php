@@ -24,21 +24,25 @@ use EPHPMVC\Standard\FrontController as StandardFrontController,
 
 $router = new StandardFifoRouter();
 
-$router->addRoute(new HTTPStaticPathRoute('/hello-world', 'HelloWorld'));
+$router->addRoute(new HTTPStaticPathRoute('/MVC/EPHPMVC/app/http/hello-world', 'HelloWorld'));
 $router->addRoute(new HTTPStaticPathRoute('/start', 'StartGreeting'));
 
 $dispatcher = new StandardDispatcher();
 
-$request = new HTTPRequest(
-    array(
-        'GET'     => array('getKey' => 'GET VALUE'),
-        'POST'    => array('postKey' => 'POST VALUE'),
-        'SESSION' => array('sessionKey' => 'SESSION VALUE'),
-        'COOKIE'  => array('cookieKey' => 'COOKIE VALUE'),
-    ),
-    'http://libenkuo.com/MVC/EPHPMVC/app/http/hello-world'
-);
+$uri = explode('?', $_SERVER['REQUEST_URI'], 2);
 
+$params = [];
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'GET':
+        $params = $_GET;
+        break;
+    case 'POST':
+        $params = $_POST;
+        break;
+    default:
+}
+
+$request = new HTTPRequest($params, 'http://' . $_SERVER['HTTP_HOST'] . $uri[0]);
 $response = new HTTPResponse(HTTPResponse::VERSION_11);
 
 $view = new StandardView();

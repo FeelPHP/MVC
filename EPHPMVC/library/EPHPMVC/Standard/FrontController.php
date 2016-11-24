@@ -11,7 +11,6 @@ use EPHPMVC\RouterInterface,
 class FrontController
 {
     protected $_router;
-    
     protected $_dispatcher;
     
     public function __construct(RouterInterface $router, DispatcherInterface $dispatcher)
@@ -25,7 +24,7 @@ class FrontController
         $route = $this->_router->route($request, $response);
         
         while (!$response->isError() and !$request->isDispatched()) {
-            $this->_dipatcher->dispatch($route, $request, $response, $view);
+            $this->_dispatcher->dispatch($route, $request, $response, $view);
         }
         $response->send($view);
     }

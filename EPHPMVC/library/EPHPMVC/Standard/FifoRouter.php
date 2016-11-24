@@ -21,7 +21,6 @@ class FifoRouter implements RouterInterface
     {
         $matchingRoute = null;
         foreach ($this->_routes as $route) {
-            
             if ($route->matches($request)) {
                 $matchingRoute = $route;
                 break;

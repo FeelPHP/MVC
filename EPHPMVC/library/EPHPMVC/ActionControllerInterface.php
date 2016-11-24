@@ -4,6 +4,6 @@ namespace EPHPMVC;
 
 interface ActionControllerInterface
 {
-    public function execute(RequestInterface $request, ReponseInterface $response, ViewInterface $view);
+    public function execute(RequestInterface $request, ResponseInterface $response, ViewInterface $view);
 }
 
